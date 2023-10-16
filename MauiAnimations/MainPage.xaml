@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAnimations.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                x:Name="img"
+                Source="dotnet_bot.png"
+                HeightRequest="200"
+                WidthRequest="200"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout>
+                <VerticalStackLayout>
+                    <Button Text="Rotate" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="RotateThing"/>
+                    <Entry x:Name="rotateET" Placeholder="Enter degree to rotate to"/>
+                    <Entry x:Name="rotateEaseET" Placeholder="Enter the ease in ms"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Button Text="Rotate" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="ScaleThing"/>
+                    <Entry x:Name="scaleET" Placeholder="Enter scale value (> 0.0)"/>
+                    <Entry x:Name="scaleEaseET" Placeholder="Enter the ease in ms"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
