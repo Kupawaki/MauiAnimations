@@ -3,34 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAnimations.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <VerticalStackLayout VerticalOptions="End" Margin="10">
 
-            <Image
-                x:Name="img"
-                Source="dotnet_bot.png"
-                HeightRequest="200"
-                WidthRequest="200"
-                HorizontalOptions="Center" />
+        <Image x:Name="img" Source="dotnet_bot.png" HeightRequest="200" WidthRequest="200"/>
 
-            <HorizontalStackLayout>
-                <VerticalStackLayout>
-                    <Button Text="Rotate" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="RotateThing"/>
-                    <Entry x:Name="rotateET" Placeholder="Enter degree to rotate to"/>
-                    <Entry x:Name="rotateEaseET" Placeholder="Enter the ease in ms"/>
-                </VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
 
-                <VerticalStackLayout>
-                    <Button Text="Rotate" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="ScaleThing"/>
-                    <Entry x:Name="scaleET" Placeholder="Enter scale value (> 0.0)"/>
-                    <Entry x:Name="scaleEaseET" Placeholder="Enter the ease in ms"/>
-                </VerticalStackLayout>
-            </HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Button x:Name="rotateBTN" Text="Rotate" WidthRequest="200" Clicked="RotateThing"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
+                <Entry x:Name="rotateET"
+                       Placeholder="Enter degrees"
+                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"/>
+
+                <Entry x:Name="rotateEaseET"
+                       Placeholder="Enter the ease in ms"
+                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Button x:Name="scaleBTN" Text="Scale" WidthRequest="200" Clicked="ScaleThing"/>
+                <Entry x:Name="scaleET"
+                       Placeholder="Enter scale value (> 0.0)"
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+                <Entry x:Name="scaleEaseET"
+                       Placeholder="Enter the ease in ms"
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Button x:Name="translateBTN" Text="Translate" WidthRequest="200" Clicked="TranslateThing"/>
+                <HorizontalStackLayout>
+                    <Entry x:Name="translateXET"
+                           Placeholder="Enter x value"
+                           WidthRequest="{Binding Source={x:Reference translateBTN}, Path=WidthRequest,
+                           Converter={StaticResource WidthRequestConverterHalf}}"/>
+                    <Entry x:Name="translateYET"
+                           Placeholder="Enter y value"
+                           WidthRequest="{Binding Source={x:Reference translateBTN}, Path=WidthRequest,
+                           Converter={StaticResource WidthRequestConverterHalf}}"/>
+                </HorizontalStackLayout>
+                <Entry x:Name="translateEaseET" Placeholder="Enter the ease in ms"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Button x:Name="fadeBTN" Text="Fade" WidthRequest="200" Clicked="FadeThing"/>
+                <Entry x:Name="fadeET"
+                       Placeholder="Enter fade value (0-1)"
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+                <Entry x:Name="fadeEaseET"
+                       Placeholder="Enter the ease in ms"
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+            </VerticalStackLayout>
+
+        </HorizontalStackLayout>
+        <Button Text="Cancel Animations"
+                Clicked="CancelAllAnimations"
+                WidthRequest="{Binding Source={x:Reference rotateBTN},
+                               Path=WidthRequest,
+                               Converter={StaticResource WidthRequestConverterTriple}}"/>
+    </VerticalStackLayout>
 
 </ContentPage>

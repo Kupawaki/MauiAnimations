@@ -6,6 +6,9 @@
         {
             InitializeComponent();
 
+            Resources.Add("WidthRequestConverterHalf", new WidthRequestConverterHalf());
+            Resources.Add("WidthRequestConverterTriple", new WidthRequestConverterTriple());
+
             MainPage = new AppShell();
         }
     }
