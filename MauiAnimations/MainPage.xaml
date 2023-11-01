@@ -10,50 +10,58 @@
         <HorizontalStackLayout HorizontalOptions="Center">
 
             <VerticalStackLayout>
-                <Button x:Name="rotateBTN" Text="Rotate" WidthRequest="200" Clicked="RotateThing"/>
+                <Button x:Name="rotateBTN" Text="Rotate" WidthRequest="200" Clicked="RotateThing" Style="{DynamicResource ButtonStyle}"/>
 
                 <Entry x:Name="rotateET"
                        Placeholder="Enter degrees"
-                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"/>
+                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"
+                       Style="{DynamicResource EntryStyle}"/>
 
                 <Entry x:Name="rotateEaseET"
                        Placeholder="Enter the ease in ms"
-                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"/>
+                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"
+                       Style="{DynamicResource EntryStyle}"/>
             </VerticalStackLayout>
 
             <VerticalStackLayout>
-                <Button x:Name="scaleBTN" Text="Scale" WidthRequest="200" Clicked="ScaleThing"/>
+                <Button x:Name="scaleBTN" Text="Scale" WidthRequest="200" Clicked="ScaleThing" Style="{DynamicResource ButtonStyle}"/>
                 <Entry x:Name="scaleET"
                        Placeholder="Enter scale value (> 0.0)"
-                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"
+                       Style="{DynamicResource EntryStyle}"/>
                 <Entry x:Name="scaleEaseET"
                        Placeholder="Enter the ease in ms"
-                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"
+                       Style="{DynamicResource EntryStyle}"/>
             </VerticalStackLayout>
 
             <VerticalStackLayout>
-                <Button x:Name="translateBTN" Text="Translate" WidthRequest="200" Clicked="TranslateThing"/>
+                <Button x:Name="translateBTN" Text="Translate" WidthRequest="200" Clicked="TranslateThing" Style="{DynamicResource ButtonStyle}"/>
                 <HorizontalStackLayout>
                     <Entry x:Name="translateXET"
                            Placeholder="Enter x value"
                            WidthRequest="{Binding Source={x:Reference translateBTN}, Path=WidthRequest,
-                           Converter={StaticResource WidthRequestConverterHalf}}"/>
+                           Converter={StaticResource WidthRequestConverterHalf}}"
+                           Style="{DynamicResource EntryStyle}"/>
                     <Entry x:Name="translateYET"
                            Placeholder="Enter y value"
                            WidthRequest="{Binding Source={x:Reference translateBTN}, Path=WidthRequest,
-                           Converter={StaticResource WidthRequestConverterHalf}}"/>
+                           Converter={StaticResource WidthRequestConverterHalf}}"
+                           Style="{DynamicResource EntryStyle}"/>
                 </HorizontalStackLayout>
-                <Entry x:Name="translateEaseET" Placeholder="Enter the ease in ms"/>
+                <Entry x:Name="translateEaseET" Placeholder="Enter the ease in ms" Style="{DynamicResource EntryStyle}"/>
             </VerticalStackLayout>
 
             <VerticalStackLayout>
-                <Button x:Name="fadeBTN" Text="Fade" WidthRequest="200" Clicked="FadeThing"/>
+                <Button x:Name="fadeBTN" Text="Fade" WidthRequest="200" Clicked="FadeThing" Style="{DynamicResource ButtonStyle}"/>
                 <Entry x:Name="fadeET"
                        Placeholder="Enter fade value (0-1)"
-                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"
+                       Style="{DynamicResource EntryStyle}"/>
                 <Entry x:Name="fadeEaseET"
                        Placeholder="Enter the ease in ms"
-                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"/>
+                       WidthRequest="{Binding Source={x:Reference scaleBTN}, Path=WidthRequest}"
+                       Style="{DynamicResource EntryStyle}"/>
             </VerticalStackLayout>
 
         </HorizontalStackLayout>
@@ -61,7 +69,8 @@
                 Clicked="CancelAllAnimations"
                 WidthRequest="{Binding Source={x:Reference rotateBTN},
                                Path=WidthRequest,
-                               Converter={StaticResource WidthRequestConverterTriple}}"/>
+                               Converter={StaticResource WidthRequestConverterTriple}}"
+                Style="{DynamicResource ButtonStyle}"/>
     </VerticalStackLayout>
 
 </ContentPage>
