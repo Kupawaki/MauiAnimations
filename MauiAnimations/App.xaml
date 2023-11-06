@@ -50,6 +50,7 @@
 
         </Style>
 
+
         <ResourceDictionary Source="DarkTheme.xaml" />
 
     </Application.Resources>

@@ -14,8 +14,7 @@
 
                 <Entry x:Name="rotateET"
                        Placeholder="Enter degrees"
-                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"
-                       Style="{DynamicResource EntryStyle}"/>
+                       WidthRequest="{Binding Source={x:Reference rotateBTN}, Path=WidthRequest}"/>
 
                 <Entry x:Name="rotateEaseET"
                        Placeholder="Enter the ease in ms"
